@@ -13,6 +13,6 @@ final class PriceParsingException extends Exception
      */
     public function __construct(string $url)
     {
-        parent::__construct("Unable to parse the price from the provided URL: {$url}");
+        parent::__construct("Unable to parse the price from the provided URL: $url");
     }
 }

@@ -9,6 +9,7 @@ use App\Services\PriceTracker\Exceptions\HttpRequestException;
 use App\Services\PriceTracker\Exceptions\PriceParsingException;
 use DOMDocument;
 use DOMXPath;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 
 final class OlxPriceParsingStrategy extends PriceParsingStrategy
@@ -30,7 +31,7 @@ final class OlxPriceParsingStrategy extends PriceParsingStrategy
      *
      * @throws HttpRequestException
      */
-    private function fetchHtml(string $url): \Illuminate\Http\Client\Response
+    private function fetchHtml(string $url): Response
     {
         $response = Http::get($url);
 

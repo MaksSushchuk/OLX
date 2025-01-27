@@ -1,10 +1,6 @@
 <?php
 
-use App\Services\PriceTracker\PriceTrackerService;
+use App\Http\Controllers\SubscribeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/test', function () {
-    $service = app(PriceTrackerService::class);
-
-    $service->subscribe('', 'test@gmail.com');
-});
+Route::get('/subscribe', action: SubscribeController::class);

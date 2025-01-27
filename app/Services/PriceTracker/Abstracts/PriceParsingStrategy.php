@@ -18,7 +18,7 @@ abstract class PriceParsingStrategy
      */
     abstract protected function parsePrice(string $url): ?float;
 
-    public function tryParsePrice($url): ?float
+    public function tryParsePrice(string $url): ?float
     {
         try {
             return $this->parsePrice($url);
